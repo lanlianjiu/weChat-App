@@ -1,0 +1,19 @@
+<view class="index">
+  <view class="index-hd">
+    <view class="index-desc">首页</view>
+  </view>
+  <view class="index-bd">
+    <view class="kind-list">
+      <view wx:if="{{showModel}}" class="model">
+        <view class="modelTitle">获取微信授权信息</view>
+        <view class="modelBody">微信登录需要获取您的用户信息，请前往设置</view>
+        <view class="btns">
+          <button open-type="getUserInfo" class="agree" bindgetuserinfo="agreeGetUser" lang="zh_CN">
+            去设置
+          </button>
+        </view>
+      </view>
+      <view wx:if="{{showModel}}" class="mask"></view>
+    </view>
+  </view>
+</view>
