@@ -1,41 +1,50 @@
+var wxrequest = require('../../util/network.js')
 Page({
+  data: {
+    image: "",
+    sourceTypeIndex: 2,
+    sourceType: ['拍照', '相册', '拍照或相册'],
+
+    sizeTypeIndex: 2,
+    countIndex: 8,
+  },
   onLoad: function () {
     var self = this
 
     self.setData({
       loading: true
     })
+    // var url = "http://localhost/SHP/wxApi/web/v1/users";
 
-    wx.request({
-      url: "http://localhost/SHP/appApi/v1/users",
-      data: {
-        noncestr: Date.now()
-      },
-      dataType:'json',
-      success: function (result) {
-        wx.showToast({
-          title: '请求成功',
-          icon: 'success',
-          mask: true,
-          duration: 2000
-        })
-        self.setData({
-          loading: false
-        })
-        console.log('request success', result)
-      },
-
-      fail: function ({ errMsg }) {
-        console.log('request fail', errMsg)
-        self.setData({
-          loading: false
-        })
-      },
-      complete:function (params) {
-        console.log(234242)
-      }
+    // wxrequest.requestWx(url, {},"GET", function (res) {
+    //   console.log(res);
+    // },
+    // function (res) {
+    //   console.log(res);
+    // }, 
+    // function (res) {
+    //   console.log(res);
+    // })
+  }, 
+  sourceTypeChange: function (e) {
+    wxrequest.uploadImg(e.detail.value,2,8,function(res) {
+      console.log(res);
     })
-
-  },
+    //this.chooseImage(e.detail.value);
+  }, 
+  // chooseImage: function (s) {
+  //   var that = this
+  //   wx.chooseImage({
+  //     sourceType: s,
+  //     sizeType: 2,
+  //     count: 8,
+  //     success: function (res) {
+  //       console.log(res)
+  //       that.setData({
+  //         image: res.tempFilePaths
+  //       })
+  //     }
+  //   })
+  // }
 })
 
