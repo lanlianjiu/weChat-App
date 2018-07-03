@@ -1,4 +1,4 @@
-var wxrequest = require('../../util/network.js')
+var wxApi = require('../../util/wxApi.js')
 Page({
   data: {
     image: "",
@@ -25,13 +25,23 @@ Page({
     // function (res) {
     //   console.log(res);
     // })
-  }, 
-  sourceTypeChange: function (e) {
-    wxrequest.uploadImg(e.detail.value,2,8,function(res) {
-      console.log(res);
+
+     var url = {url:"http://localhost/SHP/wxApi/web/v1/users"};
+ 
+    wxApi.get(url, {}, {})
+    .then((res) =>{
+      console.log(res)
     })
-    //this.chooseImage(e.detail.value);
+    .catch((errMsg) => {
+      console.log(errMsg);
+    });
   }, 
+  // sourceTypeChange: function (e) {
+  //   wxrequest.uploadImg(e.detail.value,2,8,function(res) {
+  //     console.log(res);
+  //   })
+  //   //this.chooseImage(e.detail.value);
+  // }, 
   // chooseImage: function (s) {
   //   var that = this
   //   wx.chooseImage({
