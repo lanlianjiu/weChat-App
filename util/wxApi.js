@@ -6,12 +6,6 @@ function wxRequset(api, params) {
             success: resolve,
             fail: reject
         }))
-        // .then((res)=>{
-        // console.log(res)
-        // })
-        // .catch((error)=>{
-        //     console.log(error)
-        // });
     });
     return promise;
 }

@@ -29,12 +29,12 @@ Page({
      var url = {url:"http://localhost/SHP/wxApi/web/v1/users"};
  
     wxApi.get(url, {}, {})
-    .then((res) =>{
-      console.log(res)
-    })
-    .catch((errMsg) => {
-      console.log(errMsg);
-    });
+    // .then((res) =>{
+    //   console.log(res)
+    // })
+    // .catch((errMsg) => {
+    //   console.log(errMsg);
+    // });
   }, 
   // sourceTypeChange: function (e) {
   //   wxrequest.uploadImg(e.detail.value,2,8,function(res) {
