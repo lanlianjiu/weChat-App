@@ -56,10 +56,10 @@ function get(url, data, config) {
 
 function post(url, data, config) {
     var params = config || {};
-    params.method = 'GET';
+    params.method = 'POST';
     params.url = url;
     params.data = data;
-    wxRequest(params);
+    return wxRequest(params);
 }
 
 function upload(url, data, config) {
@@ -67,7 +67,7 @@ function upload(url, data, config) {
     var params = config || {};
     params.url = url;
     params.data = data;
-    wxPromise(wx.uploadFile, params);
+    return wxPromise(wx.uploadFile, params);
 }
 
 module.exports = {
