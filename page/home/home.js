@@ -1,5 +1,5 @@
 
-var request = require('../../util/requestService.js')
+var request = require('../../util/wxApi.js')
 var app = getApp();
 Page({
   onLoad: function () {
