@@ -1,14 +1,15 @@
 /**
  * 小程序配置文件
  */
+var _server = 'https://mini.shpWx.com'
 var qiniu = {
     enabled: true,
-    uploadTokenUrl: '1',
-    imgApi: '1',
-    uploadApi: '1'
+    uploadTokenUrl: 'WX-getUploadToken.do',
+    uploadApi: 'http://upload.qiniu.com',
+    imgURL: 'http://img.clouddn.com/'
 }
 var config = {
-    _server: 'https://www.shpWx.com',
+    _server,
     qiniu: qiniu
 };
 module.exports = config;
