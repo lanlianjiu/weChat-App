@@ -1,7 +1,7 @@
 {
-    "navigationBarTitleText": "Demo",
+    "navigationBarTitleText": "首页",
     "usingComponents": {
-        "wux-cell-group": "../../dist/cell-group/index",
-        "wux-cell": "../../dist/cell/index"
+        "wux-row": "../../dist/row/index",
+        "wux-col": "../../dist/col/index"
     }
 }

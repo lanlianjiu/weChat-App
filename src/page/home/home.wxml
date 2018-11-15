@@ -1,15 +1,13 @@
 <view class="page__bd">
-    <view class="logo">
-        <image src="http://pbqg2m54r.bkt.clouddn.com/logo.png" />
-        <view class="logo__text">Wux Weapp</view>
+    <view class="header">
+        <wux-row>
+            <wux-col span="6">
+                <view class="placeholder">wux</view>
+            </wux-col>
+            <wux-col span="6">
+                <view class="placeholder">wux</view>
+            </wux-col>
+        </wux-row>
     </view>
-    <view class="page-body">
-        <block wx:for="{{ components }}" wx:key="">
-            <wux-cell-group title="{{ item.title }}">
-                <block wx:for="{{ item.children }}" wx:key="" wx:for-item="child">
-                    <wux-cell title="{{ child.title }}" extra="{{ child.remark }}" is-link url="{{ child.url }}"></wux-cell>
-                </block>
-            </wux-cell-group>
-        </block>
-    </view>
+    <view class="page-body"></view>
 </view>

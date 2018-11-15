@@ -1,1 +1,6 @@
 /* pages/index/index.wxss */
+.header {
+    background: url('http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg');
+    width: 100%;
+    height: 300rpx;
+}
