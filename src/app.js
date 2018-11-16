@@ -4,14 +4,27 @@ import $user from 'lib/user';
 import $http from 'lib/http';
 App({
   globalData: {
-    version: "2.1.3"
+    version: "1.0.0",
+    windowWidth: 0,
+    windowHeight: 0
   },
   onLaunch: function () {
     let self = this
     this.checkVersion();
     $user.checkLogin(); //检查登陆态度
   },
-  onShow: function () {},
+  onShow: function () {
+    let that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+
+        let windowHeight = (res.windowHeight * (750 / res.windowWidth)); //将高度乘以换算后的该设备的rpx与px的比例
+        let windowWidth = (res.windowWidth * (750 / res.windowWidth)); //将高度乘以换算后的该设备的rpx与px的比例
+        that.globalData.windowWidth = windowWidth;
+        that.globalData.windowHeight = windowHeight;
+      }
+    })
+  },
   onHide: function () {},
   checkVersion: function () {
     const updateManager = wx.getUpdateManager()
