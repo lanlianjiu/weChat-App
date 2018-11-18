@@ -3,7 +3,7 @@
         <wux-row style="margin:50rpx;">
             <wux-col span="4">
                 <view style="height:200rpx">
-                    <image style="width:100%;height:200rpx" src="http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg" />
+                    <image style="width:100%;height:200rpx" src="http://pidzu1qiu.bkt.clouddn.com/seller_avatar_256px.jpg" />
                 </view>
             </wux-col>
             <wux-col span="8">
